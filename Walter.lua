@@ -1,7 +1,21 @@
 -- Walter AddOn!
+Walter = {}
 
-local label = "says"
-local message = "I'm ALIVE!"
-local str = "|cff22ff22Walter|r - |cff999999" .. label .. ":|r " .. message
+local function prt(str)
+    DEFAULT_CHAT_FRAME:AddMessage(str)
+end
 
-DEFAULT_CHAT_FRAME:AddMessage(str)
+local function print_addon_string(name, lbl, msg)
+    local pattern = "|cff22ff22%s|r - |cff999999%s:|r %s"
+    local str = string.format(pattern, name, lbl, msg)
+
+    prt(str)
+end
+
+function Walter.say(message)
+    local label = "says"
+    
+    print_addon_string('walter', label, message)
+end
+
+Walter.say("I'm ALIVE!")
