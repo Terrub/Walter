@@ -1,5 +1,4 @@
 -- Walter AddOn!
-Walter = {}
 
 local function prt(str)
     DEFAULT_CHAT_FRAME:AddMessage(str)
@@ -12,10 +11,10 @@ local function print_addon_string(name, lbl, msg)
     prt(str)
 end
 
+Walter = {}
+
 function Walter.say(message)
-    local label = "says"
-    
-    print_addon_string('walter', label, message)
+    print_addon_string('walter', 'says', message)
 end
 
 Walter.say("I'm ALIVE!")
