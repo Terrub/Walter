@@ -37,9 +37,15 @@ Walter = {}
 function Walter.create_print(print_func)
     local function _print(name, lbl, msg)
         local pattern = "|cff22ff22%s|r - |cff999999%s:|r %s"
-        local str = string.format(pattern, name, lbl, msg)
-    
-        print_func(str)
+        local status, str = pcall(
+            string.format, pattern, name, lbl, msg
+        )
+        
+        if status then
+            print_func(str)
+        else
+            _print("Walter", "ERROR", str)
+        end
     end
     
     return _print
