@@ -51,6 +51,10 @@ function Walter.is_boolean(type_check)
     return (type(value) == "string")
 end
 
+function Walter.is_string(value)
+	return (type(value) == "string")
+end
+
 function Walter.say(message)
     Walter.print('Walter', 'says', message)
 end
