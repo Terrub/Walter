@@ -4,10 +4,6 @@
 -- UTIL FUNCTIONS,
 -- agnostic of walter's existance
 --------------------------------------------------------------------------------
-local function is_boolean(value)
-	return (type(value) == "boolean")
-end
-
 local function prt(str)
     DEFAULT_CHAT_FRAME:AddMessage(str)
 end
@@ -51,12 +47,8 @@ function Walter.create_print(print_func)
     return _print
 end
 
-function  Walter.create_is_boolean(type_check)
-	local function _is_boolean(value)
-		return type_check(value)
-	end
-
-	return _is_boolean
+function Walter.is_boolean(type_check)
+    return (type(value) == "string")
 end
 
 function Walter.say(message)
@@ -67,8 +59,7 @@ end
 -- Walter's intiation procedure.
 -------------------------------------------------------------------------------- 
 local config = {
-	["print"] = prt,
-	["is_boolean"] = is_boolean
+	["print"] = prt
 }
 
 initialise_addon_with_config(Walter, config)
