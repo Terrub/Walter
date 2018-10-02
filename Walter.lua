@@ -30,9 +30,6 @@ Walter = {}
 --------------------------------------------------------------------------------
 -- Walter's private stuff.
 --------------------------------------------------------------------------------
-local function say(message)
-    Walter.print('Walter', 'says', message)
-end
 
 --------------------------------------------------------------------------------
 -- Walter's public stuff.
@@ -56,6 +53,10 @@ function  Walter.create_is_boolean(type_check)
 	return _is_boolean
 end
 
+function Walter.say(message)
+    Walter.print('Walter', 'says', message)
+end
+
 --------------------------------------------------------------------------------
 -- Walter's intiation procedure.
 -------------------------------------------------------------------------------- 
@@ -66,4 +67,4 @@ local config = {
 
 initialise_addon_with_config(Walter, config)
 
-say("I'm ALIVE!")
+Walter.say("I'm ALIVE!")
