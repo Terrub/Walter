@@ -48,7 +48,7 @@ function Walter.create_print(print_func)
     return _print
 end
 
-function walter.create_is_boolean(type_check)
+function  Walter.create_is_boolean(type_check)
 	local function _is_boolean(value)
 		return type_check(value)
 	end
