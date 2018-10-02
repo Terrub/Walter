@@ -55,6 +55,10 @@ function Walter.is_string(value)
 	return (type(value) == "string")
 end
 
+function Walter.is_number(value)
+	return (type(value) == "number")
+end
+
 function Walter.say(message)
     Walter.print('Walter', 'says', message)
 end
