@@ -63,6 +63,10 @@ function Walter.is_table(value)
 	return (type(value) == "table")
 end
 
+function Walter.is_function(value)
+	return (type(value) == "function")
+end
+
 function Walter.say(message)
     Walter.print('Walter', 'says', message)
 end
